@@ -2,6 +2,7 @@
 spring:
   application:
     name: moto-servicio
-  config:
-    enable: true
-    uri: http://localhost:8083
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:8083

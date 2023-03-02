@@ -4,5 +4,5 @@ spring:
     name: carro-servicio
   cloud:
     config:
-      enable: true
+      enabled: true
       uri: http://localhost:8083

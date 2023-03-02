@@ -3,6 +3,6 @@ spring:
     name: usuario-servicio
   cloud:
     config:
-      enable: true
+      enabled: true
       uri: http://localhost:8083
 

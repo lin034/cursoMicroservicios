@@ -11,11 +11,13 @@
         <module name="carro-servicio" />
         <module name="usuario-servicio" />
         <module name="configservicio" />
+        <module name="eureka-servicio" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="carro-servicio" target="11" />
       <module name="configservicio" target="11" />
+      <module name="eureka-servicio" target="11" />
       <module name="moto-servicio" target="11" />
       <module name="usuario-servicio" target="11" />
     </bytecodeTargetLevel>
@@ -24,6 +26,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="carro-servicio" options="-parameters" />
       <module name="configservicio" options="-parameters" />
+      <module name="eureka-servicio" options="-parameters" />
       <module name="moto-servicio" options="-parameters" />
       <module name="usuario-servicio" options="-parameters" />
     </option>

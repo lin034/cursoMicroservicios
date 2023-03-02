@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: eureka-servicio
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:8083
+
+

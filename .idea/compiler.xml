@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="moto-servicio" />
         <module name="carro-servicio" />
+        <module name="gatewayservicio" />
         <module name="usuario-servicio" />
         <module name="configservicio" />
         <module name="eureka-servicio" />
@@ -18,6 +19,7 @@
       <module name="carro-servicio" target="11" />
       <module name="configservicio" target="11" />
       <module name="eureka-servicio" target="11" />
+      <module name="gatewayservicio" target="11" />
       <module name="moto-servicio" target="11" />
       <module name="usuario-servicio" target="11" />
     </bytecodeTargetLevel>
@@ -27,6 +29,7 @@
       <module name="carro-servicio" options="-parameters" />
       <module name="configservicio" options="-parameters" />
       <module name="eureka-servicio" options="-parameters" />
+      <module name="gatewayservicio" options="-parameters" />
       <module name="moto-servicio" options="-parameters" />
       <module name="usuario-servicio" options="-parameters" />
     </option>

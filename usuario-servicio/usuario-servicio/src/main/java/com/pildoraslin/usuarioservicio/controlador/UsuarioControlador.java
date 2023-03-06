@@ -137,6 +137,29 @@ public class UsuarioControlador {
         return  ResponseEntity.ok(vehiculosUsuario);
     }
 
+    public ResponseEntity<List<Carro>> fallbackDameCarros(@PathVariable(name = "usuarioId") int usuarioId, RuntimeException exception){
 
+        return new ResponseEntity("el microservicio de chatCarro no funciona intente mas tarde", HttpStatus.OK);
+    }
+
+    public ResponseEntity<Carro> fallbackGuardaCarros(@PathVariable(name = "usuarioId") int usuarioId, @RequestBody Carro carro, RuntimeException exception){
+
+        return new ResponseEntity("el microservicio de fotosCarro no funciona intente mas tarde", HttpStatus.OK);
+    }
+
+    public ResponseEntity<List<Moto>> fallbackDameMotos(@PathVariable(name = "usuarioId") int usuarioId, RuntimeException exception){
+
+        return new ResponseEntity("el microservicio de chatMoto no funciona intente mas tarde", HttpStatus.OK);
+    }
+
+    public ResponseEntity<Carro> fallbackGuardaMotos(@PathVariable(name = "usuarioId") int usuarioId, @RequestBody Moto moto, RuntimeException exception){
+
+        return new ResponseEntity("el microservicio de fotosMoto no funciona intente mas tarde", HttpStatus.OK);
+    }
+
+    public ResponseEntity<Carro> fallbackDameVehiculos(@PathVariable(name = "usuarioId") int usuarioId, RuntimeException exception){
+
+        return new ResponseEntity("el microservicio de imagenesTodos no funciona intente mas tarde", HttpStatus.OK);
+    }
 
 }

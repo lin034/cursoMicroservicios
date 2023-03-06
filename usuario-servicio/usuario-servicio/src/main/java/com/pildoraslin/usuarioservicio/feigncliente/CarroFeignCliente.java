@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "carro-servicio", url = "http://localhost:8081")
+//@FeignClient(name = "carro-servicio", url = "http://localhost:8081")
+
+@FeignClient(name = "carro-servicio")
 @RequestMapping("/carros")
 public interface CarroFeignCliente {
 

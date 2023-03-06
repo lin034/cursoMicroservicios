@@ -157,7 +157,7 @@ public class UsuarioControlador {
         return new ResponseEntity("el microservicio de fotosMoto no funciona intente mas tarde", HttpStatus.OK);
     }
 
-    public ResponseEntity<Carro> fallbackDameVehiculos(@PathVariable(name = "usuarioId") int usuarioId, RuntimeException exception){
+    public ResponseEntity<Map<String, Object>> fallbackDameVehiculos(@PathVariable(name = "usuarioId") int usuarioId, RuntimeException exception){
 
         return new ResponseEntity("el microservicio de imagenesTodos no funciona intente mas tarde", HttpStatus.OK);
     }

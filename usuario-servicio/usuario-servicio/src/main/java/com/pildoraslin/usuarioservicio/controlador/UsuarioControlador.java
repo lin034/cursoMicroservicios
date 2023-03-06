@@ -5,6 +5,7 @@ import com.pildoraslin.usuarioservicio.modelos.Carro;
 import com.pildoraslin.usuarioservicio.modelos.Moto;
 import com.pildoraslin.usuarioservicio.repositorio.UsuarioRepositorio;
 import com.pildoraslin.usuarioservicio.servicio.UsuarioService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,6 +56,7 @@ public class UsuarioControlador {
         return new ResponseEntity<>(usuario1, HttpStatus.CREATED);
     }
 
+    @CircuitBreaker(name= "carrosCB", fallbackMethod = "fallbackDameCarros")
     @GetMapping("/carros/{usuarioId}")
     public ResponseEntity<List<Carro>> dameCarros(@PathVariable(name = "usuarioId") int usuarioId){
 
@@ -74,6 +76,7 @@ public class UsuarioControlador {
         return  new ResponseEntity<>(carros, HttpStatus.OK);
     }
 
+    @CircuitBreaker(name= "motosCB", fallbackMethod = "fallbackDameMotos")
     @GetMapping("/motos/{usuarioId}")
     public ResponseEntity<List<Moto>> dameMotos(@PathVariable(name = "usuarioId") int usuarioId){
 
@@ -88,6 +91,7 @@ public class UsuarioControlador {
         return  ResponseEntity.ok(motos);
     }
 
+    @CircuitBreaker(name= "carrosCB", fallbackMethod = "fallbackGuardaCarros")
     @PostMapping("/carros/{usuarioId}")
     public ResponseEntity<Carro> guardaCarroPorUsuarioId(@PathVariable(name = "usuarioId") int usuarioId, @RequestBody Carro carro){
 
@@ -102,6 +106,7 @@ public class UsuarioControlador {
         return new ResponseEntity<>(carro1, HttpStatus.ACCEPTED);
     }
 
+    @CircuitBreaker(name= "motosCB", fallbackMethod = "fallbackGuardaMotos")
     @PostMapping("/motos/{usuarioId}")
     public ResponseEntity<Moto> creaMotoPorUsuarioId(@PathVariable(name = "usuarioId") int usuarioId, @RequestBody Moto moto){
 
@@ -117,6 +122,7 @@ public class UsuarioControlador {
 
     }
 
+    @CircuitBreaker(name= "todosCB", fallbackMethod = "fallbackDameVehiculos")
     @GetMapping("/todos/{usuarioId}")
     public ResponseEntity<Map<String, Object>> dameVehiculosPorId(@PathVariable(name = "usuarioId") int usuarioId){
 
@@ -130,5 +136,7 @@ public class UsuarioControlador {
 
         return  ResponseEntity.ok(vehiculosUsuario);
     }
+
+
 
 }
